@@ -8,13 +8,17 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 def get_filters_inputs():
     """
-    Asks for input to filter the dataset by city, month, and day of the week.
-    It ensures that the user's input is valid and within the available options.
+    Asks the user to choose the city, month, and day to filter the bikeshare data.
+
+    This function prompts for user input and ensures valid selections for:
+    - City: Chicago, New York City, or Washington
+    - Month: January to June or 'all' for no filter
+    - Day: Any day of the week or 'all' for no filter
 
     Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+        city (str): The selected city for analysis.
+        month (str): The selected month for analysis (or 'all').
+        day (str): The selected day of the week for analysis (or 'all').
     """
     print('Hello! Let\'s explore some US bikeshare data!')
 

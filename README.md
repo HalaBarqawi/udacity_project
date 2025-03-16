@@ -46,3 +46,5 @@ Run the program:
 python bikeshare_2.py
 ```
 ```
+## Purpose
+This project provides insights into bike-sharing usage patterns for three cities: Chicago, New York City, and Washington. By analyzing trip data, users can explore usage trends based on time, location, and demographics.
