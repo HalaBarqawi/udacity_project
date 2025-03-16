@@ -6,7 +6,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-def get_filters():
+def get_filters_inputs():
     """
     Asks for input to filter the dataset by city, month, and day of the week.
     It ensures that the user's input is valid and within the available options.
@@ -42,7 +42,7 @@ def get_filters():
     return city, month, day
 
 
-def load_data(city, month, day):
+def load_and_filter_data(city, month, day):
     """
     Loads the bikeshare data for the specified city and filters it by month and day if applicable.
 
@@ -77,7 +77,7 @@ def load_data(city, month, day):
     return df
 
 
-def display_raw_data(df):
+def show_raw_data(df):
     """
      The function will ask the user if they want to view more data. The user can continue to see raw data 
     in chunks of 5 rows, and the program will stop when there is no more data left to display.
@@ -100,7 +100,7 @@ def display_raw_data(df):
             print("Invalid input. Please enter 'yes' or 'no'.")
 
 
-def time_stats(df):
+def display_time_stats(df):
     """
      Displays statistics on the most frequent times of travel.
 
