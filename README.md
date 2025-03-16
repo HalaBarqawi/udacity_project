@@ -1,6 +1,3 @@
-Here's your `README.md` formatted as requested:
-
-```
 # BikeShare Data Analysis
 
 ## Overview
