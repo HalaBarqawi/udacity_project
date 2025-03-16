@@ -8,7 +8,8 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 def get_filters():
     """
-    Asks user to specify a city, month, and day to analyze.
+    Asks for input to filter the dataset by city, month, and day of the week.
+    It ensures that the user's input is valid and within the available options.
 
     Returns:
         (str) city - name of the city to analyze
@@ -43,7 +44,16 @@ def get_filters():
 
 def load_data(city, month, day):
     """
-    Loads data for the specified city and filters by month and day if applicable.
+    Loads the bikeshare data for the specified city and filters it by month and day if applicable.
+
+    The function reads the data for the selected city and converts the 'Start Time' column to datetime.
+    It then filters the data based on the selected month and day of the week.
+
+    Args:
+        city (str): The city for which to load data (chicago, new york city, washington).
+        month (str): The month to filter by, or "all" for no filtering.
+        day (str): The day of the week to filter by, or "all" for no filtering.
+
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
@@ -68,7 +78,13 @@ def load_data(city, month, day):
 
 
 def display_raw_data(df):
-    """Prompts user to display raw data in increments of 5 rows."""
+    """
+     The function will ask the user if they want to view more data. The user can continue to see raw data 
+    in chunks of 5 rows, and the program will stop when there is no more data left to display.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the bikeshare data.
+    """
     start_row = 0
     while True:
         show_data = input("Would you like to see 5 lines of raw data? Enter yes or no: ").lower()
@@ -85,7 +101,15 @@ def display_raw_data(df):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """
+     Displays statistics on the most frequent times of travel.
+
+    The function calculates and prints the most common month, day of the week, and hour of the day for 
+    trips in the dataset.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the bikeshare data.    
+    """
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -107,7 +131,15 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """
+    Displays statistics on the most popular stations and trips.
+
+    The function calculates and prints the most common start station, end station, and the most frequent 
+    combination of start and end stations (i.e., the most popular trip).
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the bikeshare data.
+    """
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
@@ -128,7 +160,15 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """
+    Displays statistics on the total and average trip duration.
+
+    The function calculates and prints the total travel time and the mean travel time for trips in the 
+    dataset.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the bikeshare data
+    """
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
@@ -145,7 +185,15 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """
+    Displays statistics on bikeshare users.
+
+    The function calculates and prints the counts of user types, gender, and birth year (if available) 
+    from the dataset.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the bikeshare data.
+    """
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
